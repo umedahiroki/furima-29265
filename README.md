@@ -33,18 +33,15 @@ Things you may want to cover:
 | last_name_kanji     | string | null: false       |
 | first_name_katakana | string | null: false       | 
 | last_name_katakana  | string | null: false       |
-| first_name_hiragana | string | null: false       | 
-| last_name_hiragana  | string | null: false       |
 | nicknmame           | string | null: false       |
 | email               | string | null: false       |
 | password            | string | null: false       |
-| birthday            | string | null: false       |
+| birthday            | data   | null: false       |
 
 ### Association
 
 - has_many :items
-- has_many :purchase
-- has_one :credit card
+- has_many :purchases
 
 
 ## items テーブル
@@ -52,14 +49,14 @@ Things you may want to cover:
 | Column           | Type      | Options                                    |
 | ---------------- | --------- | ------------------------------------------ |
 | name             | string    | null: false                                |
-| price            | interger  | null: false                                |
+| price            | integer   | null: false                                |
 | picture          | text      | null: false                                |
-| text             | string    | null: false                                |
+| text             | text      | null: false                                |
 | status           | string    | null: false                                |
-| delivery fee     | string    | null: false                                |
-| category_id      | string    | null: false                                |
-| origin_area_id   | interger  | null: false                                |
-| shopping data_id | interger  | null: false                                |
+| delivery_fee     | string    | null: false                                |
+| category_id      | integer   | null: false                                |
+| origin_area_id   | integer   | null: false                                |
+| shopping data_id | integer   | null: false                                |
 | user             | reference | null: false null: false, foreign_key: true |
 
 ### Association
@@ -68,7 +65,7 @@ Things you may want to cover:
 - has_one :purchase
 
 
-## purchase テーブル
+## purchases テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |                         
@@ -79,17 +76,18 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
-- has_many :credit card
 - has_one :shopping address
 
 ## shopping address テーブル
 
 | Column            | Type        | Options                        |
 | ----------------- | ----------- | ------------------------------ |
-| post code         | string      | null: false                    | 
+| post_code         | string      | null: false                    | 
 | prefecture_id     | integer     | null: false                    |
-| address           | string      | null: false                    |
-| phone number      | string      | null: false                    |
+| city_id           | integer     | null: false                    |
+| address_id        | integer     | null: false                    |
+| building_number   | string      | null: false                    |
+| phone_number      | string      | null: false                    |
 | purchase          | references  | null: false, foreign_key: true |
 
 ### Association
