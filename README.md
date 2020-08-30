@@ -53,7 +53,7 @@ Things you may want to cover:
 | picture          | text      | null: false                                |
 | text             | text      | null: false                                |
 | status           | string    | null: false                                |
-| delivery_fee     | string    | null: false                                |
+| delivery_fee_id  | integer   | null: false                                |
 | category_id      | integer   | null: false                                |
 | origin_area_id   | integer   | null: false                                |
 | shopping data_id | integer   | null: false                                |
@@ -84,8 +84,8 @@ Things you may want to cover:
 | ----------------- | ----------- | ------------------------------ |
 | post_code         | string      | null: false                    | 
 | prefecture_id     | integer     | null: false                    |
-| city_id           | integer     | null: false                    |
-| address_id        | integer     | null: false                    |
+| city_id           | string      | null: false                    |
+| address_id        | string      | null: false                    |
 | building_number   | string      | null: false                    |
 | phone_number      | string      | null: false                    |
 | purchase          | references  | null: false, foreign_key: true |
