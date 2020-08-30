@@ -36,6 +36,11 @@ Things you may want to cover:
 | password      | string | null: false |
 | birthday      | string | null: false |
 
+### Association
+
+- has_many :items
+- has_many :purchase
+- has_one :credit card
 
 
 ## items テーブル
@@ -50,6 +55,10 @@ Things you may want to cover:
 | shopping data   | string    | null: false                               |
 | user            | reference | null: false null: false, foreign_key: true|
 
+### Association
+
+- belongs_to :user
+- has_many :purchase
 
 
 ## purchase テーブル
@@ -59,6 +68,12 @@ Things you may want to cover:
 | user    | references | null: false, foreign_key: true |
 | item    | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_many :credit card
+- has_one :shopping address
 
 ## shopping address テーブル
 
@@ -70,6 +85,9 @@ Things you may want to cover:
 | phone number   | interger   | null: false                    |
 | purchase       | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :purchase
 
 ## credit card テーブル
 
@@ -78,3 +96,7 @@ Things you may want to cover:
 | user   | references | null: false, foreign_key: true |
 | room   | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :user
+- belongs_to :purchase
