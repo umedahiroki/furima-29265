@@ -52,7 +52,7 @@ Things you may want to cover:
 | price            | integer   | null: false                                |
 | picture          | text      | null: false                                |
 | text             | text      | null: false                                |
-| status           | string    | null: false                                |
+| status_id        | integer   | null: false                                |
 | delivery_fee_id  | integer   | null: false                                |
 | category_id      | integer   | null: false                                |
 | origin_area_id   | integer   | null: false                                |
@@ -78,15 +78,15 @@ Things you may want to cover:
 - belongs_to :item
 - has_one :shopping address
 
-## shopping address テーブル
+## shopping_address テーブル
 
 | Column            | Type        | Options                        |
 | ----------------- | ----------- | ------------------------------ |
 | post_code         | string      | null: false                    | 
 | prefecture_id     | integer     | null: false                    |
-| city_id           | string      | null: false                    |
-| address_id        | string      | null: false                    |
-| building_number   | string      | null: false                    |
+| city_id           | integer     | null: false                    |
+| address_id        | integer     | null: false                    |
+| building_number   | string      |                                |
 | phone_number      | string      | null: false                    |
 | purchase          | references  | null: false, foreign_key: true |
 
