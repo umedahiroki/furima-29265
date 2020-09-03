@@ -84,8 +84,8 @@ Things you may want to cover:
 | ----------------- | ----------- | ------------------------------ |
 | post_code         | string      | null: false                    | 
 | prefecture_id     | integer     | null: false                    |
-| city              | string      | null: false                     |
-| address           | string      | null: false                     |
+| city              | string      | null: false                    |
+| address           | string      | null: false                    |
 | building_number   | string      |                                |
 | phone_number      | string      | null: false                    |
 | purchase          | references  | null: false, foreign_key: true |
