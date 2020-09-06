@@ -63,5 +63,23 @@ it "priceが空だと登録できない" do
   expect(@item.errors.full_messages).to include("Price can't be blank")
 end
 
+it "priceが¥300~¥9,999,999の間でないと登録できない" do
+  @item.price = 100
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Price is not included in the list")
+end
+
+it "priceが¥300~¥9,999,999の間でないと登録できない" do
+  @item.price = 10000000
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Price is not included in the list")
+end
+
+it "priceが半角数字でないと登録できない" do
+  @item.price = '５００'
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Price is not included in the list")
+end
+
 end
 end

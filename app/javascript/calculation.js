@@ -4,14 +4,12 @@ function calculation(){
 
     //入力値の要素を取得
     const tagInput = document.getElementById("item-price");
-    console.log(tagInput);
 
     //入力した時のイベント設定
     tagInput.addEventListener('keyup', () => {
     
     //取得した要素を変数に代入
     const amount = tagInput.value
-    console.log(amount)
 
     //取得した値から手数料を計算
     const tax_sum = Math.ceil(amount * 0.1);
