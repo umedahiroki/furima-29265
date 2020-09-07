@@ -9,6 +9,6 @@ class Category < ActiveHash::Base
         { id: 7, name: 'DVD' },
         { id: 8, name: '雑貨' },
         { id: 9, name: 'ゲーム' },
-        { id: 10, name: 'おもちゃ' }
+        { id: 10, name: 'その他' }
       ]
 end
