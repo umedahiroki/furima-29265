@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 before_action :move_to_index, except: [:index]
 
 def index
+  @item = Item.all.order("created_at DESC")
 end
 
 def new
@@ -19,7 +20,7 @@ def create
 
 private
 def item_params
-  params.require(:item).permit(:name, :price, :picture, :text, :status_id, :delivery_fee_id, :category_id, :origin_area_id, :shopping_datum_id).merge(user_id: current_user.id)
+  params.require(:item).permit(:name, :price, :text, :status_id, :delivery_fee_id, :category_id, :origin_area_id, :shopping_datum_id,:image).merge(user_id: current_user.id)
 end
 
 def move_to_index

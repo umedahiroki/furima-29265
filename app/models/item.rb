@@ -13,7 +13,7 @@ class Item < ApplicationRecord
     has_one_attached :image
 
     validates :name, presence: true
-    validates :picture,presence: true
+    validates :image, presence: true
     validates :text,presence: true
     validates :status, presence: true  
     validates :status_id, numericality: { other_than: 1 } 
