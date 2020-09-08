@@ -21,7 +21,6 @@ def create
 
   def show
     @item = Item.find(params[:id])
-    
   end
 
 private
