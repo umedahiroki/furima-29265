@@ -96,7 +96,6 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("First name katakana can't be blank")
       end
 
-
       it "last_name_katakanaが空では登録できないこと" do
         @user.last_name_katakana = nil
         @user.valid?
