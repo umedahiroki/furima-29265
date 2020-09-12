@@ -5,6 +5,7 @@ before_action :set_item, only: [:edit,:update,:show,:destroy]
 
 def index
   @item = Item.all.order("created_at DESC")
+  @order = Order.new
 end
 
 def new

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-    belongs_to :user
-    has_one :purchase
+    belongs_to :user, optional: true
+    has_one :order, foreign_key: :item_id, dependent: :destroy 
 
     extend ActiveHash::Associations::ActiveRecordExtensions
 
