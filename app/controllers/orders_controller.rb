@@ -48,6 +48,7 @@ class OrdersController < ApplicationController
     params.permit(:post_code, :prefecture_id, :city, :address, :building_number, :phone_number,:token).merge(user_id: current_user.id, item_id: params[:item_id])
     end
 
+    #javascriptを実行する
     def pay_item
         Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
         Payjp::Charge.create(
